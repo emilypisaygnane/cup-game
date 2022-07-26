@@ -2,6 +2,7 @@
 const shedButton = document.getElementById('shed-button');
 const treeButton = document.getElementById('tree-button');
 const boulderButton = document.getElementById('boulder-button');
+const resetButton = document.getElementById('reset-button');
 
 const shedContainer = document.getElementById('shed-container');
 const treeContainer = document.getElementById('tree-container');
@@ -62,6 +63,16 @@ function resetStyles() {
     treeContainer.classList.remove('face');
     boulderContainer.classList.remove('face');
 }
+
+resetButton.addEventListener('click', () => {
+    totalGuesses = 0;
+    correctGuesses = 0;
+    totalEl.textContent = totalGuesses;
+    winsEl.textContent = correctGuesses;
+    lossesEl.textContent = totalGuesses - correctGuesses;
+    resetStyles();
+});
+
     // reset the styles
     // then increment the guesses
     // then grab the appropriate container element for the correct guess from the DOM
